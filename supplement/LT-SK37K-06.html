@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="JSK37U Product Documentation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../styles.css" type="text/css">
+  <title>LT-SK37K-06 Installation Supplement for Sensor Dash Display and Cable</title>
+
+  <style>
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    
+    .finger {
+      width: 50px;
+      height: 50px;
+      background-color: white;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      animation: swipe 3s infinite;
+    }
+    
+    #finger1 {
+      margin-right: 100px;
+    }
+    
+    #finger2 {
+      margin-left: 100px;
+    }
+    
+    @keyframes swipe {
+      0% { transform: translateY(0); }
+      20% { transform: translateY(0); }
+      80% { transform: translateY(-300px); }
+      100% { transform: translateY(-300px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay" id="overlay" style="display: none;">
+    <div id="finger1" class="finger"></div>
+    <div id="finger2" class="finger"></div>
+    <p style="color: white; font-size: 24px; margin-top: 20px;">Hold with two fingers, then swipe up or down </p>
+  </div>
+
+  <script>
+    // Hide the overlay when the user interacts with the screen
+    document.body.addEventListener('mousedown', function() {
+      document.getElementById('overlay').style.display = 'none';
+    });
+  </script>
+  <iframe id="pdf-js-viewer" src="/web/viewer.html?file=/assets/pdf/LT-SK37K-06.pdf" title="webviewer" frameborder="0" width="100%" height="100%"></iframe>
+
+  
+  <div id="container">
+    <div id="header">Installation Supplement for Sensor Dash Display and Cable</div>
+    
+    <!-- Placeholder for the unordered list (above the iframe) -->
+    <div id="list-placeholder-above"></div>
+
+    <a href="https://www.jostinternational.com/contact/" style="font-style: oblique;">Can't find what you're looking for?</a>
+
+    <ul id="pdf-links">
+      <li><a href="/Fifth-Wheel/supplement/LT-SK37K-06.html">Back to Top ⇧</a></li>
+    </ul>
+  </div>
+  <!-- Placeholder for the unordered list (below the iframe) -->
+  <div id="list-placeholder-below"></div>
+
+  <script>
+    // Hide the overlay when the user interacts with the screen
+    document.body.addEventListener('touchstart', function() {
+      document.getElementById('overlay').style.display = 'none';
+    });
+
+    // Hide the overlay when the user interacts with the screen
+    document.body.addEventListener('wheel', function() {
+      document.getElementById('overlay').style.display = 'none';
+    });
+
+    // Hide the overlay when the user interacts with the screen
+    document.body.addEventListener('mousedown', function() {
+      document.getElementById('overlay').style.display = 'none';
+    });
+
+    document.addEventListener('DOMContentLoaded', function() {
+  var iframe = document.getElementById('pdf-js-viewer');
+  var counter = 0; // Initialize the counter
+  var maxExecutions = 3; // Set the maximum number of executions
+
+  iframe.onload = function() {
+    var PDFViewerApplication = iframe.contentWindow.PDFViewerApplication;
+    PDFViewerApplication.initializedPromise.then(function() {
+      PDFViewerApplication.eventBus.on('pagechanging', function(evt) {
+        if (counter < maxExecutions) { // Check if the counter is less than the maximum number of executions
+          var pageNumber = evt.pageNumber;
+          if (pageNumber === PDFViewerApplication.pagesCount) {
+            document.getElementById('overlay').style.display = 'flex'; // Show the overlay
+            console.log('Finger styling scheme is active');
+          } else {
+            document.getElementById('overlay').style.display = 'none'; // Hide the overlay
+            console.log('Finger styling scheme is not active');
+          }
+          counter++; // Increment the counter
+        }
+      });
+    });
+  };
+});
+
+// Your Hammer.js code
+var myElement = document.getElementById('pdf-js-viewer');
+    var myOptions = {};
+    var mc = new Hammer.Manager(myElement, myOptions);
+    mc.add(new Hammer.Pan({ direction: Hammer.DIRECTION_ALL, threshold: 0 }));
+    mc.add(new Hammer.Pinch());
+    mc.on("pinch", function(ev) {
+      var currentScale = ev.scale;
+      // Update the scale of the PDF viewer
+      pdfViewer.currentScale = currentScale;
+      pdfViewer.currentScaleValue = currentScale;
+    });
+  </script>
+
+</body>
+</html>
+
+
+  <!-- <script>
+    // Function to detect if the user is on an iOS device
+    function isIOS() {
+      return [
+        'iPad Simulator',
+        'iPhone Simulator',
+        'iPod Simulator',
+        'iPad',
+        'iPhone',
+        'iPod'
+      ].includes(navigator.platform)
+      || (navigator.userAgent.includes("Mac") && "ontouchend" in document);
+    }
+
+    // Your unordered list
+    var list = document.getElementById('pdf-links');
+
+    // The placeholders
+    var placeholderAbove = document.getElementById('list-placeholder-above');
+    var placeholderBelow = document.getElementById('list-placeholder-below');
+
+    // Check if the user is on an iOS device
+    if (isIOS()) {
+      // If they are, move the list above the iframe
+      placeholderAbove.appendChild(list);
+    } else {
+      // If they're not, move the list below the iframe
+      placeholderBelow.appendChild(list);
+    }
+  </script> -->

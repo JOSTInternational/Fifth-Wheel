@@ -1,0 +1,57 @@
+<!-- responsive production attempt -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="JSK37U Product Documentation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- this is correct favicon path -->
+  <link rel="icon" href="../favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="../styles.css" type="text/css">
+  <title>LT-SK37U-01 Installation for 37U, 3CN, and 36N</title>
+</head>
+<body>
+  <!-- include overlay for iOS -->
+  <div class="overlay" id="overlay" style="display: none;">
+    <div id="finger1" class="finger"></div>
+    <div id="finger2" class="finger"></div>
+    <p class="overlay-text">Hold with two fingers, then swipe up or down to navigate the page. </p>
+  </div>
+
+  <!-- production -->
+  <!-- <iframe id="pdf-js-viewer" src="/Fifth-Wheel/web/viewer.html?file=/Fifth-Wheel/assets/pdf/LT-SK37U-01.pdf#page=1#zoom=automatic-zoom" title="webviewer" frameborder="0" width="100%" height="100%"></iframe> -->
+
+  <!-- development -->
+  <iframe id="pdf-js-viewer" src="/web/viewer.html?file=/assets/pdf/LT-SK37U-01.pdf#page=1#zoom=automatic-zoom" title="webviewer" frameborder="0" width="100%" height="100%"></iframe>
+
+  <!-- development -->
+  <footer>
+    <div id="container">
+      <div id="header">Installation for 37U, 3CN, and 36N</div>
+      
+      <ul id="pdf-links">
+        <!-- <li><a href="/">Product Overview [PDF]</a></li> -->
+        <li><a href="/Fifth-Wheel/supplement/LT-SK37A-05.html" target="_blank">Installation Supplement for Air Release [PDF]</a></li>
+        <li><a href="/Fifth-Wheel/supplement/LT-SK37K-06.html" target="_blank">Installation Supplement for Sensor Dash Display and Cable [PDF]</a></li>
+        <li><a href="/Fifth-Wheel/supplement/LT-SK37K-07.html" target="_blank">Installation Supplement for Loc-Light [PDF]</a></li>
+        <li><a href="/Fifth-Wheel/install/LT-SK37U-01.html">Back to Top ⇧</a></li>
+        <!-- <li><a href="/maintain/JSK37U/index.html">Maintenance Procedures [PDF]</a></li>
+        <li><a href="/operate/JSK37U/index.html">Operation Instructions [PDF]</a></li>
+        <li><a href="/parts/JSK37U/index.html">Parts List [PDF]</a></li>
+        <li><a href="/troubleshoot/JSK37U/index.html">Quick Troubleshooting Guide [PDF]</a></li>
+        <li><a href="/supplement/JSK37U/index.html">Slider Supplement [PDF]</a></li> -->
+      </ul>
+
+      <a href="https://www.jostinternational.com/contact/" style="font-style: oblique;">Can't find what you're looking for?</a>
+    </div>
+  </footer>
+
+  <!-- production - listen for event to invoke overlay -->
+  <!-- <script src="/Fifth-Wheel/scripts/iOSoverlay.js"></script> -->
+  <!-- <script src="/Fifth-Wheel/scripts/iFramereload.js"></script> -->
+
+  <!-- development - listen for event to invoke overlay and reload iFrame -->
+  <script src="/scripts/iOSoverlay.js"></script>
+  <script src="/scripts/iFramereload.js"></script>
+</body>
+</html>

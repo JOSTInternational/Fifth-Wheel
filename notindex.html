@@ -1,0 +1,39 @@
+<html>
+<body>
+<script>
+(async () => {
+    const baseUrl = 'https://jostinternational.github.io/Fifth-Wheel/';
+    const apiUrl = 'https://api.github.com/repos/JOSTInternational/Fifth-Wheel/contents/';
+
+    async function fetchDirectory(path) {
+        const response = await fetch(apiUrl + path);
+        const data = await response.json();
+        let htmlString = '<ul>';
+        for (let file of data) {
+            const fileUrl = baseUrl + file.path;
+            if (file.type === 'dir') {
+                htmlString += `<li><a href="${fileUrl}" class="dir-link">${file.name}</a></li>`;
+            } else {
+                htmlString += `<li><a href="${fileUrl}">${file.name}</a></li>`;
+            }
+        }
+        htmlString += '</ul>';
+        document.getElementsByTagName('body')[0].innerHTML = htmlString;
+
+        // Add event listeners to directory links
+        const dirLinks = document.getElementsByClassName('dir-link');
+        for (let link of dirLinks) {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const path = this.getAttribute('href').replace(baseUrl, '');
+                fetchDirectory(path);
+            });
+        }
+    }
+
+    // Fetch the root directory
+    fetchDirectory('');
+})()
+</script>
+</body>
+</html>
