@@ -1,3 +1,4 @@
+// userAgent argument will depreciate
 if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
     // Hide the overlay when the user interacts with the screen
     document.body.addEventListener('touchstart', function() {
